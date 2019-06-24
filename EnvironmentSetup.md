@@ -1,4 +1,6 @@
-# Setting Up Watson Studio
+# Setting Up Environment
+
+In this lab we will be using Watson Studio and Watson Machine Learning to create and deploy machine learning models. We will need to have an instance of Watson Studio and an instance of Watson Machine Learning, as well as a cloud object storage instance where our artifacts/assets get stored.
 
 ## Prerequisites
 
@@ -17,7 +19,15 @@ In order to run the labs, you should go through the following steps to set up th
    ![cloud-cos](docs/images/ss6.png)
 
 1. Leave the default options, using the Lite plan and click the **`Create`** button.  
-   ![create-ws-instance](docs/images/ss7.png)
+   ![create-cos-instance](docs/images/ss7.png)
+
+1. Still in the IBM Cloud console page, Click on the **`Catalog`** link in the top banner of the IBM Cloud dashboard.  
+
+1. Select the 'AI' category on the left, under `All Categories`. Then select the 'Machine Learning' service tile.
+   ![wml](docs/images/ss10.png)
+
+1. Leave the default options, using the Lite plan and click the **`Create`** button.  
+   ![create-wml-instance](docs/images/ss11.png)
 
 1. Still in the IBM Cloud console page, Click on the **`Catalog`** link in the top banner of the IBM Cloud dashboard.  
 

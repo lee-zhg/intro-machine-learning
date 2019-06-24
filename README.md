@@ -1,13 +1,13 @@
-# Data & AI Workshop - Data Understanding and Processing
+# Data & AI Workshop - Machine Learning
 
 ## Objective
 
-This workshop will walk you through some of the fundamental early stages of the Data Science / ML workflow. We will be exploring different aspects of data understanding, visualization and processing. By the end of these labs/tutorials, you should understand:
+This workshop will walk you through model development stages of the Data Science / ML workflow. We will be exploring different ways to build machine learning models and deploying those models. By the end of these labs/tutorials, you should understand:
 
 - The use of Jupyter Notebooks in IBM Watson Studio
-- How to load data sets with open source libraries
-- How to visualize data sets through code and no-code options
-- How to process data sets
+- Code based approaches to building ML models
+- Low-code and Zero code based approached to building ML Models
+- Deploying ML models to Watson Machine Learning.
 
 ### Tools Used
 
@@ -41,23 +41,27 @@ Most of these labs are written in python and using Jupyter Notebooks. One of the
 
     ![Download Repo](docs/images/ss0.png)
 
-1. Ensure you have access to a Waston Studio Instance. If you need to provision an instance, see the instructions in the [Setup Watson Studio doc](SetupWatsonStudio.md)
+1. Ensure you have access to a Waston Studio Instance. If you need to provision an instance, see the instructions in the [Setup Watson Studio doc](EnvironmentSetup.md)
 
 ### Lab 1 - Building A Machine Learning Model Using Code
 
-Lab 1
+In this first lab, we will explore the traditional approaching to building models in code, using Python and Spark as our implementation of choice. Follow the instructions in the [Readme for code based approach](ModelBuild-Code.md)
 
 ### Lab 2 - Building A Machine Learning Model Using Visual Assembly
 
-Lab 2
+There may be cases where a code based approach might not be desired or possible. In these cases, a more visual approach to building models can be used. In this lab we build a model using the visual assembly tool of Watson Studio, to "drag and drop" our way to a machine learning model. Follow the instructions in the [Readme for visual assembly approach](ModelBuild-Modeler.md)
 
 ### Lab 3 - Building A Machine Learning Model Using Automatic Builder
 
-Lab 3
+In Lab 3 we take more of a configuration or wizard based approach to model building. Using the Model Builder capability of WML and Watson Studio, we will build a model simply by selecting the options we want to consider (i.e. what kind of evaluator, what features, etc). Follow the instructions in the [Readme for model builder approach](ModelBuild-AutoBuilder.md)
 
 ### Lab 4 - Building A Machine Learning Model Using AutoAI
 
-Lab 4
+Finally, in this lab, we will explore an approach to building models that uses Watson Studio to optimize the pipeline process. Instead of selecting configuration options as we did in Lab 3, we simply select what kind of model output we are looking for and AutoAI does the rest. Follow the instructions in the [Readme for AutoAI approach](ModelBuild-AutoAI.md)
+
+### [Optional] Lab 5 - Build a Machine Learning Model with Continuous Learning
+
+For this optional lab, we will now see how we ca set up a model in Watson Machine Learning to include the notion of feedback for continual improvement. This model is configured to retrain based on logged data and can also be configured to redeploy when based on a performance threshold. To run this lab, follow the instructions in the following continouse learning [GitHub README](https://github.com/ibm-ai-education/continuous-learning-with-watson-ml)
 
 ## Related Links
 
