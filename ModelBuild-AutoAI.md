@@ -1,6 +1,18 @@
 # Build and Deploy an ML model using AutoAI
 
-In this walkthrough we will be building a model using a fully automated capability of Watson Studio and Watson Machine Learning known as Auto AI. To do this we will:
+In this walkthrough we will be building a model using a fully automated capability of Watson Studio and Watson Machine Learning known as Auto AI. 
+
+AutoAI automates the pipeline optimization process that is common to the model development workflow. As part of that optimization process, AutoAI will perform the following:
+
+- Data pre-processing: AutoAI attempts to analyze, clean, and prepare your raw data for machine learning. Automatically detects and categorizes features based on data type and finds best  strategies for missing value imputation, feature encoding, and feature scaling for your data.
+
+- Automated model selection: AutoAI performs testing and ranking of candidate estimators against small subsets of the data set, gradually increasing the size of the subset for the most promising estimators to arrive at the best match.
+
+- Automated feature engineering: Feature engineering attempts to transform the raw data into the combination of features that best represents the problem to achieve the most accurate prediction.
+
+- Hyperparameter optimization: A hyper-parameter optimization step refines the best performing model pipelines.
+
+In the lab we will:
 
 - Create a project in Watson Studio.
 - Add dataset to project.
@@ -12,7 +24,7 @@ In this walkthrough we will be building a model using a fully automated capabili
 
 ### Prerequisites
 
-- The data and Jupyter notebooks used in these labs are contained in this repository. Ensure you have downloaded / cloned the repository per instructions in the [README](READMe.md).
+- The data used in these labs are contained in this repository. Ensure you have downloaded / cloned the repository per instructions in the [README](READMe.md).
 
 - It is assumed you have your environment set up with either lite or payed versions of Watson Studio and Watson Machine Learning. If not, contact the lab instructor or set up your own lite instances as detailed in the [Setup Environment readme](EnvironmentSetup.md)
 
@@ -58,13 +70,49 @@ In this walkthrough we will be building a model using a fully automated capabili
 
 ## Step 3: Build Modeler Flow
 
-TBD
+1. AutoAI uses your data set to generate candidate model pipelines. It will use your dataset to discover data transformations, estimator algorithms, and parameter settings that work best for your model.
+
+1. To get started, from your main project page. Click on the **`Add to project`** button and select the `AutoAI experiment` option.
+    ![](docs/images/ss20.png)
+
+1. In the experiment definition screen, give your experiment a name. If you have a single Machine Learning service associated to your project, it will selected in the drop down list. Note that the compute configuration can not currently be changed in the beta of this capability. Click the **`Create`** button.
+    ![](docs/images/ss21.png)
+
+1. Next we need to give AutoAI the data that the model will be built against. Click the **`Select from project`** button.
+    ![](docs/images/ss22.png)
+
+1. In the data selection window, select the data file that you uploaded to your project earlier, then click **`Select asset`**
+    ![](docs/images/ss23.png)
+
+1. AutoAI will determine the data types and you will select the column to predict (i.e the target or the label). Select the `HEARTFAILURE` column and click the **`Run experiment`** button.
+
+    ![](docs/images/ss24.png)
+
+1. AutoAI will start the experiment process, cleaning/preprocessing the data set, selecting the best base model/evaluator and then running multiple pipelines. This process may take a while but as the pipelines are built and tested, you will see them appear in the leader board.
+
+    ![](docs/images/ss25.png)
+
+1. As the pipelines appear in the leader board, you can expand them to view the details of the pipeline experiment and results.
+
+    ![](docs/images/ss26.png)
+
+1. Once the experiment completes, the UI will display the best performing model at the top of the leaderboard.
+
+    ![](docs/images/ss27.png)
+
+1. One of the capabilities of AutoAI is to perform feature engineering. You can click into the pipeline in your experiment that contained the feature engineering step and view the data transformation that were applied. _Note that your pipeline may be different_
+
+    ![](docs/images/ss28.png)
+
+1. Once the experiment has completed, we have the option to save the best model. If you click on the `Save model` button next to the top pipeline you can save the model. Just give the model a name and click the **`Save`** button.
+
+    ![](docs/images/ss29.png)
 
 ## [Optional] Step 4: Deploy the Machine Learning model
 
 Although training is a critical step in the machine learning process, the model still needs to be packaged, fronted with an API, and deployed as a web service. Watson Machine Learning streamlines deployment of machine learning models into production.
 
-1. Starting from projects page in Watson Studio, you should see an additional asset has been added to the project. The newly trained and saved model you created above should be visible. One easy way to tell it was created by the automated model builder is the type will be type wml.
+1. Starting from projects page in Watson Studio, you should see an additional asset has been added to the project. The newly trained and saved model you created above should be visible.
 
 1. Select the model from the project view, then select `Deployments` from the model view, and finally select `Add Deployment`.
 
