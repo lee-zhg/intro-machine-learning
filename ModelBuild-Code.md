@@ -70,8 +70,6 @@ In this walkthrough we will be building a model. The flow of this walkthrough is
 
 1. Choose new notebook `From File`. Give your notebook a name and choose the notebook file from the downloaded repository (`dsai_machinelearning/notebooks/sparkmodel.ipynb`).
 
-   ![Notebook](docs/images/notebookfromfile.png)
-
 1. For `Runtime`be sure to select the one with Spark and Python 3.5, then click `Create Notebook`.
 
    ![Runtime](docs/images/notebookfromfile.png)
