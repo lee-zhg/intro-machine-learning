@@ -86,10 +86,7 @@ In this walkthrough we will be building a model. The flow of this walkthrough is
 
 1. After a few seconds, the notebook becomes `Trusted`.
 
-
-3.9 Follow the instructions in the notebook to complete the exercise.
-
-1. The notebook will load, use the instructions in the notebook by running through the cells. Click the `(►) Run` button to start stepping through the notebook. 
+1. Follow the instructions in the notebook to complete the exercise. Click the `(►) Run` button to start stepping through the notebook. 
 
 >> **Important** when the code in a cell is still running, the label to the left changes to **In [\*]**. Do **not** continue to the next cell until the code is finished running.
 
