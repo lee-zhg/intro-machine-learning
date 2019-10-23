@@ -104,7 +104,7 @@ In the lab we will:
 
     ![](docs/images/ss27.png)
 
-1. One of the capabilities of AutoAI is to perform feature engineering. You can click into the pipeline in your experiment that contained the feature engineering step and view the data transformation that were applied. _Note that your pipeline may be different_
+1. One of the AutoAI capabilities is to perform feature engineering. You can click into the pipeline in your experiment that contained the feature engineering step and view the data transformation that were applied. _Note that your pipeline may be different_
 
     ![](docs/images/ss28.png)
 
@@ -118,7 +118,11 @@ Although training is a critical step in the machine learning process, the model 
 
 1. Starting from projects page in Watson Studio, you should see an additional asset has been added to the project. The newly trained and saved model you created above should be visible.
 
-1. Select the model from the project view, then select `Deployments` from the model view, and finally select `Add Deployment`.
+1. Select the model from the project view.
+
+1. Select `Deployments` tab on the model window.
+
+1. Click the `Add Deployment` button.
 
 1. Name the deployment something unique and click `Save`.
 
@@ -126,12 +130,29 @@ Although training is a critical step in the machine learning process, the model 
 
 ## [Optional] Step 5: Test the Model
 
-1. Aside from testing the model within the notebook. You can test the model using the Watson Studio Interface.
+You can test the model using the Watson Studio Interface.
+
+1. Go back the home page of your project in `Watson Studio`.
 
 1. Click on the `Deployment` tab on the top of the project page and then click the name you used to create the deployment of your model
 
    ![](docs/images/ss15.png)
 
-1. Enter some values in the form and click the `Predict` button.
-
+1. Navigate to the `Test` tab.
+   
    ![](docs/images/ss16.png)
+
+1. Enter testing values below in the form and click the `Predict` button.
+
+    ```
+    AVGHEARTBEATSPERMIN:        93
+    PALPITATIONSPERDAY:         22
+    CHOLESTEROL:                163
+    BMI:                        25
+    AGE:                        49
+    SEX:                        F
+    FAMILYHISTORY:              N
+    SMOKERLAST5YRS:             N
+    EXERCISEMINPERWEEK:         110
+    ```
+
