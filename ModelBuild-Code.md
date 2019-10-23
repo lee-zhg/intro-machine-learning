@@ -76,6 +76,19 @@ In this walkthrough we will be building a model. The flow of this walkthrough is
 
    ![Runtime](docs/images/notebookfromfile.png)
 
+1. After a few seconds the notebook should be loaded.
+
+1. If you see `Not Trusted` on the top-right corner of your screen, click on it. 
+
+    ![Notebook loaded](docs/images/nottrusted.png)
+
+1. When prompted, choose `Trust`.
+
+1. After a few seconds, the notebook becomes `Trusted`.
+
+
+3.9 Follow the instructions in the notebook to complete the exercise.
+
 1. The notebook will load, use the instructions in the notebook by running through the cells. Click the `(►) Run` button to start stepping through the notebook. 
 
 >> **Important** when the code in a cell is still running, the label to the left changes to **In [\*]**. Do **not** continue to the next cell until the code is finished running.
