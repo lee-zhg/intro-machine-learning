@@ -88,11 +88,11 @@ In the lab we will:
 1. In the data selection window, select the data file that you uploaded to your project earlier, then click **`Select asset`**
     ![](docs/images/ss23.png)
 
-1. AutoAI will determine the data types and you will select the column to predict (i.e the target or the label). Select the `HEARTFAILURE` column and click the **`Run experiment`** button.
+1. AutoAI determines the data types and you select the column to predict (i.e the target or the label). Select the `HEARTFAILURE` column and click the **`Run experiment`** button.
 
     ![](docs/images/ss24.png)
 
-1. AutoAI will start the experiment process, cleaning/preprocessing the data set, selecting the best base model/evaluator and then running multiple pipelines. This process may take a while but as the pipelines are built and tested, you will see them appear in the leader board.
+1. AutoAI starts the experiment process, clean/preprocess the data set, select the best base model/evaluator and then run multiple pipelines. This process may take a while. As the pipelines are built and tested, you see them appear on the screen.
 
     ![](docs/images/ss25.png)
 
