@@ -36,7 +36,7 @@ In the lab we will:
 
     ![Create Project](docs/images/ss8a.png)
 
-1. Select `Standard` as the type of project to create.
+1. Select option `Select an empty project`.
 
 1. Give your project a name and click **`Create`** on the bottom right.
 
@@ -53,7 +53,9 @@ In the lab we will:
 1. Click on the `Existing` tab and select the name of your Machine Learning service instance.
 
     ![Add Existing ML Service](docs/images/choose-ml-service.png)
-  
+
+1. Click `Select`.
+
 1. The Watson Machine Learning service is now listed as one of your `Associated Services`.
 
 ## Step 2: Add Data Set
@@ -75,10 +77,12 @@ In the lab we will:
 1. To get started, from your main project page. Click on the **`Add to project`** button and select the `AutoAI experiment` option.
     ![](docs/images/ss20.png)
 
-1. In the experiment definition screen, give your experiment a name. If you have a single Machine Learning service associated to your project, it will selected in the drop down list. Note that the compute configuration can not currently be changed in the beta of this capability. Click the **`Create`** button.
+1. In the experiment definition screen, select the `From blank` option under `Create AutoAI experiment type`.
+
+1. Give your experiment a name. If you have a single Machine Learning service associated to your project, it will selected in the drop down list. Note that the compute configuration can not currently be changed in the beta of this capability. Click the **`Create`** button.
     ![](docs/images/ss21.png)
 
-1. Next we need to give AutoAI the data that the model will be built against. Click the **`Select from project`** button.
+1. Next we need to give AutoAI the data that the model will be built on. Click the **`Select from project`** button.
     ![](docs/images/ss22.png)
 
 1. In the data selection window, select the data file that you uploaded to your project earlier, then click **`Select asset`**
