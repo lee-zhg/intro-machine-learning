@@ -92,11 +92,17 @@ In this walkthrough we will be building a model. The flow of this walkthrough is
 
 ## [Optional] Step 4: Test the Model
 
-1. Aside from testing the model within the notebook. You can test the model using the Watson Studio Interface.
+Aside from testing the model within the notebook. You can test the model using the Watson Studio Interface.
+
+1. Navigate to the home page of your project in Watson Studio.
 
 1. Click on the `Deployment` tab on the top of the project page and then click the name you used to create the deployment of your model
 
    ![](docs/images/ss15.png)
+
+1. Navigate to the `Test` tab.
+   
+   ![](docs/images/ss16.png)
 
 1. Enter testing values below in the form and click the `Predict` button.
 
@@ -112,4 +118,3 @@ In this walkthrough we will be building a model. The flow of this walkthrough is
     EXERCISEMINPERWEEK:         110
     ```
 
-   ![](docs/images/ss16.png)
