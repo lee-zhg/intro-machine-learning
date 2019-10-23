@@ -40,7 +40,7 @@ In this walkthrough we will be building a model. The flow of this walkthrough is
 
     ![Create Project](docs/images/ss8a.png)
 
-1. Select `Standard` as the type of project to create.
+1. Select option `Select an empty project`.
 
 1. Give your project a name and click **`Create`** on the bottom right.
 
@@ -58,6 +58,8 @@ In this walkthrough we will be building a model. The flow of this walkthrough is
 
     ![Add Existing ML Service](docs/images/choose-ml-service.png)
   
+1. Click `Select`.
+
 1. The Watson Machine Learning service is now listed as one of your `Associated Services`.
 
 ## Step 3: Add / Run Notebook
@@ -68,13 +70,15 @@ In this walkthrough we will be building a model. The flow of this walkthrough is
 
    ![Add Notebook](docs/images/newnotebook.png)
 
-1. Choose new notebook `From File`. Give your notebook a name and choose the notebook file from the downloaded repository (`dsai_machinelearning/notebooks/sparkmodel.ipynb`).
+1. Choose new notebook `From File`. Give your notebook a name and choose the notebook file from the downloaded repository (`intro-machine-learning/notebooks/sparkmodel.ipynb`).
 
-1. For `Runtime`be sure to select the one with Spark and Python 3.5, then click `Create Notebook`.
+1. For `Runtime`be sure to select the one with `Default Spark Python 3.6 XS`, then click `Create Notebook`.
 
    ![Runtime](docs/images/notebookfromfile.png)
 
-1. The notebook will load, use the instructions in the notebook by running through the cells. Click the `(►) Run` button to start stepping through the notebook. **Important** when the code in a cell is still running, the label to the left changes to **In [\*]**. Do **not** continue to the next cell until the code is finished running.
+1. The notebook will load, use the instructions in the notebook by running through the cells. Click the `(►) Run` button to start stepping through the notebook. 
+
+>> **Important** when the code in a cell is still running, the label to the left changes to **In [\*]**. Do **not** continue to the next cell until the code is finished running.
 
 ## [Optional] Step 4: Test the Model
 
@@ -84,6 +88,18 @@ In this walkthrough we will be building a model. The flow of this walkthrough is
 
    ![](docs/images/ss15.png)
 
-1. Enter some values in the form and click the `Predict` button.
+1. Enter testing values below in the form and click the `Predict` button.
+
+    ```
+    AVGHEARTBEATSPERMIN:        93
+    PALPITATIONSPERDAY:         22
+    CHOLESTEROL:                163
+    BMI:                        25
+    AGE:                        49
+    SEX:                        F
+    FAMILYHISTORY:              N
+    SMOKERLAST5YRS:             N
+    EXERCISEMINPERWEEK:         110
+    ```
 
    ![](docs/images/ss16.png)
