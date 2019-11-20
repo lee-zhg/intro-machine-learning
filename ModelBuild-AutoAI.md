@@ -222,7 +222,7 @@ You can test the model using the Watson Studio Interface.
         curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header "Authorization: Bearer  $IAM_TOKEN" --header "ML-Instance-ID: $ML_INSTANCE_ID" -d '{"input_data": [{"fields": ["AVGHEARTBEATSPERMIN", "PALPITATIONSPERDAY", "CHOLESTEROL", "BMI", "AGE", "SEX", "FAMILYHISTORY", "SMOKERLAST5YRS", "EXERCISEMINPERWEEK"],"values": [$ARRAY_OF_VALUES_TO_BE_SCORED, $ANOTHER_ARRAY_OF_VALUES_TO_BE_SCORED]}]}' https://us-south.ml.cloud.ibm.com/v4/deployments/10bb636c-c04d-41f1-9c88-cbed907937c1/predictions
         ```
 
-    > You can NOT copy and execute the above code snippet at all. You MUST copy it from your deployment.
+    > You can NOT copy and execute the above code snippet from this instruction. You MUST copy it from your deployment.
 
     * Replace the `$IAM_TOKEN` and `$ML_INSTANCE_ID` with the values that you got in the previous steps. 
 
