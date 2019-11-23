@@ -96,6 +96,10 @@ In the lab we will:
 
     ![](docs/images/ss25.png)
 
+1. Click `Swap view` link to switch views.
+
+    ![](docs/images/autoaiviews.png)
+
 1. As the pipelines appear in the leader board, you can expand them to view the details of the pipeline experiment and results.
 
     ![](docs/images/ss26.png)
@@ -104,9 +108,15 @@ In the lab we will:
 
     ![](docs/images/ss27.png)
 
+    > Note: the `Pipeline leaderboard` is at the bottom of the screen. Scroll down to view.
+
 1. One of the AutoAI capabilities is to perform feature engineering. You can click into the pipeline in your experiment that contained the feature engineering step and view the data transformation that were applied. _Note that your pipeline may be different_
 
     ![](docs/images/ss28.png)
+
+1. Click `Feature Importance` tab on the left. AutoAI provides insight of feature influence to the model.
+
+    ![](docs/images/autoaifeatureimportant.png)
 
 1. Once the experiment has completed, we have the option to save the best model. If you click on the `Save model` button next to the top pipeline you can save the model. Just give the model a name and click the **`Save`** button.
 
@@ -116,15 +126,17 @@ In the lab we will:
 
 Although training is a critical step in the machine learning process, the model still needs to be packaged, fronted with an API, and deployed as a web service. Watson Machine Learning streamlines deployment of machine learning models into production.
 
-1. Starting from projects page in Watson Studio, you should see an additional asset has been added to the project. The newly trained and saved model you created above should be visible.
+1. Starting from projects page in Watson Studio, you should see an additional asset has been added to the project in the `Assets` tab. The newly trained and saved model you created above should be visible under `Watson Machine Learning models` section.
 
-1. Select the model from the project view.
+1. Select the model.
 
 1. Select `Deployments` tab on the model window.
 
-1. Click the `Add Deployment` button.
+1. Click the `Add Deployment` link.
 
 1. Name the deployment something unique and click `Save`.
+
+1. Refresh your browser after about 10-15 seconds.
 
 1. The model is quickly packaged and deployed. Upon completion you will have a new deployment of the trained machine learning model; every trained model can have many deployments.
 
