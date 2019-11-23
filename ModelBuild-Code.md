@@ -77,7 +77,7 @@ In this walkthrough we will be building a model. The flow of this walkthrough is
 
 1. Choose new notebook `From File`. Give your notebook a name and choose the notebook file from the downloaded repository (`intro-machine-learning/notebooks/sparkmodel.ipynb`).
 
-1. For `Runtime`be sure to select the one with `Default Spark Python 3.6 XS`, then click `Create Notebook`.
+1. For `Runtime`, be sure to select the one starting with `Default Spark Python 3.6 XS`, then click `Create Notebook`.
 
    ![Runtime](docs/images/notebookfromfile.png)
 
@@ -127,7 +127,7 @@ Aside from testing the model within the notebook. You can test the model using t
 
 ## [Optional] Step 5: Test the Model via API
 
-1. Retrieve the API key and Instance ID of the `Machine Learning` instance
+1. Retrieve the API key and Instance ID of the `Machine Learning` instance. You should have obtained the `apikey` and `instance_id` at the beginning of lab. In case you need them again, below are the instruction.
 
     * Navigate to IBM Cloud dashboard at https//cloud.ibm.com.
     * Expand the `Services` section under the `Resource summary`.
@@ -176,10 +176,10 @@ Aside from testing the model within the notebook. You can test the model using t
     * Navigate back to your home page of `Watson Studio`, https://dataplatform.ibm.com
     * Select your project.
     * Navigate to the `Assets` tab.
-    * In tyhe `Assets` tab, scroll down and locate the `Watson Machine Learning models` section.
-    * Select and open your model.
+    * In the `Assets` tab, scroll down and locate the `Watson Machine Learning models` section.
+    * Select and open your model `Heart Failure Prediction Model`.
     * In your model window, navigate to the `Deployments` tab.
-    * Select your `deployment` entry `JRT Heart Failure prediction` which was created while you run the notebook. 
+    * Select your `deployment` entry `LZ Heart Failure prediction` which was created while you run the notebook. 
     * In your `Deployment` window, navigate to the `Implementation` tab.
 
         ![](docs/images/model-deployment.png)
