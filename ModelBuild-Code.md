@@ -77,7 +77,7 @@ In this walkthrough we will be building a model. The flow of this walkthrough is
 
 1. Choose new notebook `From File`. Give your notebook a name and choose the notebook file from the downloaded repository (`intro-machine-learning/notebooks/sparkmodel.ipynb`).
 
-1. For `Runtime`, be sure to select the one starting with `Default Spark Python 3.6 XS`, then click `Create Notebook`.
+1. For `Runtime`, be sure to select the one starting with `Default Spark Python 3.6`, then click `Create Notebook`.
 
    ![Runtime](docs/images/notebookfromfile.png)
 
