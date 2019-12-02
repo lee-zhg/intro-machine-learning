@@ -20,8 +20,9 @@ const wml_credentials = new Map();
 var request = require( 'sync-request' );
 
 // Paste your Watson Machine Learning service apikey and Instance ID here
-var apikey = "QiGk9o_bHFo_TrCnR_lGuLEdw2Pd2gLFPNeQzMvJiDgX";
+const apikey = "QiGk9o_bHFo_TrCnR_lGuLEdw2Pd2gLFPNeQzMvJiDgX";
 const mlInstanceId = "ce1c2b45-2918-465e-abcd-b23cec685b69";
+const scoring_url = "https://us-south.ml.cloud.ibm.com/v3/wml_instances/ce1c2b45-2918-465e-abcd-b23cec685b69/deployments/073e1b8a-0bf2-46ad-af04-e6aed292a46c/online";
 
 // generate IAM token based on APIkey of Watson Machine Learning service
 var IBM_Cloud_IAM_uid = "bx";
@@ -95,7 +96,6 @@ const wmlToken = "Bearer " + iam_token;
 
 // NOTE: manually define and pass the array(s) of values to be scored in the next line
 const payload = '{"fields": ["AVGHEARTBEATSPERMIN", "PALPITATIONSPERDAY", "CHOLESTEROL", "BMI", "AGE", "SEX", "FAMILYHISTORY", "SMOKERLAST5YRS", "EXERCISEMINPERWEEK"], "values": [[93, 22, 163, 25, 49, "F", "N", "N", 110]]}';
-const scoring_url = "https://us-south.ml.cloud.ibm.com/v3/wml_instances/ce1c2b45-2918-465e-abcd-b23cec685b69/deployments/073e1b8a-0bf2-46ad-af04-e6aed292a46c/online";
 
 // call ML model API to get Target
 apiPost(scoring_url, wmlToken, mlInstanceId, payload, function (resp) {

@@ -125,7 +125,114 @@ Aside from testing the model within the notebook. You can test the model using t
     ```
 
 
-## [Optional] Step 5: Test the Model via API
+## [Optional] Step 5: Test the Model Rest API via Node.js Sampe Code
+
+1. Retrieve the API key and Instance ID of the `Machine Learning` instance. You should have obtained the `apikey` and `instance_id` at the beginning of lab. In case you need them again, below are the instruction.
+
+    * Navigate to IBM Cloud dashboard at https//cloud.ibm.com.
+    * Expand the `Services` section under the `Resource summary`.
+    * Select your `Machine Learning` instance.
+    * Select the `Service credentials` tab in the left pane.
+    * Click the `View credentials` of any `Key` entry. 
+    * Take notes of `apikey` and `instance_id`.
+
+        ![](docs/images/ss13.png)
+
+1. In a browser, login to web terminal with provided URL and credentials.
+
+1. clone the ML repository.
+
+    ```
+    git clone https://github.com/lee-zhg/intro-machine-learning.git
+    ```
+
+1. Open the Node.js application `app02.js` in a file editor. File `app02.js` can be found in the root folder of the downloaded repository. For exmaple,
+
+    ```
+    cd  intro-machine-learning
+
+    vi app02.js
+    ```
+
+1. Replace `apikey` and `mlInstanceId` at the top of the code.
+
+    ```
+    // Paste your Watson Machine Learning service apikey and Instance ID here
+    const apikey = "ABC";
+    const mlInstanceId = "XYZ";
+    ```
+
+1. Retrieve the `Scoring End-point` of your ML model.
+
+    * Navigate to the home page of your project in Watson Studio.
+    * Click on the `Deployment` tab on the top of the project page and then click the name you used to create the deployment of your model.
+    * Navigate to the `Implementation` tab.
+    * Take a note of `Scoring End-point`.
+
+1. Replace `scoring_url` with `Scoring End-point` above at the top of the code.
+
+    ```
+    const scoring_url = "https://us-south.ml.cloud.ibm.com/v3/wml_instances/ce1c2b45-2918-465e-abcd-b23cec685b69/deployments/073e1b8a-0bf2-46ad-af04-e6aed292a46c/online";
+    ```
+
+1. Execute command below to install required Node,js libraries.
+
+    ```
+    npm install
+    ```
+
+1. Execute command below to run the Node.js sample code which calls your model Rest API and make prediction.
+
+    ```
+    node app02.js
+    ```
+
+1. You should receive a prediction.
+
+    ```
+    Scoring response
+    { fields:
+        [ 'AVGHEARTBEATSPERMIN',
+         'PALPITATIONSPERDAY',
+         'CHOLESTEROL',
+         'BMI',
+         'AGE',
+         'SEX',
+         'FAMILYHISTORY',
+         'SMOKERLAST5YRS',
+         'EXERCISEMINPERWEEK',
+         'label',
+         'SEX_IX',
+         'FAMILYHISTORY_IX',
+         'SMOKERLAST5YRS_IX',
+         'features',
+         'rawPrediction',
+         'probability',
+         'prediction',
+         'predictedLabel' ],
+    values:
+        [ [ 93,
+            22,
+            163,
+            25,
+            49,
+            'F',
+            'N',
+            'N',
+            110,
+            0,
+            1,
+            0,
+            0,
+            [Array],
+            [Array],
+            [Array],
+            0,
+            'N' ] ] }
+    ```       
+
+
+## [Optional] Step 6: Test the Model Rest API via Curl Commands
 
 1. Retrieve the API key and Instance ID of the `Machine Learning` instance. You should have obtained the `apikey` and `instance_id` at the beginning of lab. In case you need them again, below are the instruction.
 
