@@ -19,6 +19,10 @@ var apiPost = async (scoring_url, token, payload, loadCallback, errorCallback) =
 // NOTE: you must construct wmlToken based on provided documentation
 const wmlToken = "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImxlZXoiLCJyb2xlIjoiQWRtaW4iLCJwZXJtaXNzaW9ucyI6WyJhZG1pbmlzdHJhdG9yIiwiY2FuX3Byb3Zpc2lvbiIsIm1hbmFnZV9jYXRhbG9nIiwibWFuYWdlX2luZm9ybWF0aW9uX2Fzc2V0cyIsIm1hbmFnZV9xdWFsaXR5IiwibWFuYWdlX2Rpc2NvdmVyeSIsIm1hbmFnZV9tZXRhZGF0YV9pbXBvcnQiLCJtYW5hZ2VfY2F0ZWdvcmllcyIsImF1dGhvcl9nb3Zlcm5hbmNlX2FydGlmYWN0cyIsIm1hbmFnZV9nb3Zlcm5hbmNlX3dvcmtmbG93IiwiYWNjZXNzX2NhdGFsb2ciLCJhY2Nlc3NfaW5mb3JtYXRpb25fYXNzZXRzIiwidmlld19xdWFsaXR5IiwiYWNjZXNzX3F1YWxpdHkiXSwic3ViIjoibGVleiIsImlzcyI6IktOT1hTU08iLCJhdWQiOiJEU1giLCJ1aWQiOiIxMDAwMzMxMDAyIiwiYXV0aGVudGljYXRvciI6ImRlZmF1bHQiLCJpYXQiOjE1ODU4ODY2NjAsImV4cCI6MTU4NTkyOTg2MH0.JjWPS0qRl9S7GhbWhUWdBETTHADlNEku889Q-4e1dPd4PV9GBfV5zld4C4J8bXSzRvezbcKvdKCOJuTLzJIm9jo57iMYzGs5CG-d71NeWW17LByiRadXmHWx1UCIwNuAvSDo2gf7afsVGRXEU_1xDY8PO8p_45YAiET6PU-wpRrDWeO7btyv20e9I7SEpnnwgcQCgmUNFfSL5lWq62pTo7eK36-Ar1LWYKYKfAjwKIfRZUhTcduBZHhGUfIIn3NQhgnLT9QuYvtnv3s2C-itrFhYYUgfr7mRfKmm9-VmuCPDUM-Mmm5xlEXzKwwoA7XQxAVNJ7fqY9RGfLyLnyQ_kg";
 
+
+// NOTE: retrieve ml_instance_id based on provided documentation
+const mlInstanceId = "wml_local";
+
 // NOTE: manually define and pass the array(s) of values to be scored in the next line
 //const payload = '{"input_data": [{"fields": [array_of_input_fields], "values": [array_of_values_to_be_scored, another_array_of_values_to_be_scored]}]}';
 //const payload = '{"fields": ["AVGHEARTBEATSPERMIN", "PALPITATIONSPERDAY", "CHOLESTEROL", "BMI", "AGE", "SEX", "FAMILYHISTORY", "SMOKERLAST5YRS", "EXERCISEMINPERWEEK"], "values": [[93, 22, 163, 25, 49, "F", "N", "N", 110]]}';
