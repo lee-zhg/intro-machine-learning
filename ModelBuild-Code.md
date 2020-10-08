@@ -240,12 +240,12 @@ Alternatively, you can also test the model REST API via external applications. W
 
    ![](docs/images/sample_api01.png)
 
-    >Note: if you can't find the above page for any reason, a complete navigation path shows below
-        * Navigate to the home page of your Watson Studio at https://dataplatform.cloud.ibm.com/home2?context=cpdaas.
-        * Select `Deployment spaces`.
-        * Select your deployment space.
-        * Navigate to the `Deployments` tab.
-        * Select your deployment.
+    If you can't find the above page for any reason, a complete navigation path shows below
+    * Navigate to the home page of your Watson Studio at https://dataplatform.cloud.ibm.com/home2?context=cpdaas.
+    * Select `Deployment spaces`.
+    * Select your deployment space.
+    * Navigate to the `Deployments` tab.
+    * Select your deployment.
 
 1. Copy and paste the last command to a pure text editor. THis is a sample CURL command for accessing your deployed model. For example,
 
