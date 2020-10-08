@@ -129,57 +129,64 @@ Aside from testing the model within the notebook. You can test the model using t
 
 You complete the steps in this section in a `IBM Cloud Shell` environment in IBM Cloud. 
 
-1. Prepare a `IBM Cloud Shell` environment.
+1. Prepare a `IBM Cloud Shell` environment. `IBM Cloud Shell` environment provides all required CLI tools for the exercise.
 
     - Login to [IBM Cloud](https://cloud.ibm.com)(https://cloud.ibm.com).
     - Open [`IBM Cloud Shell`](https://cloud.ibm.com/shell)(https://cloud.ibm.com/shell).
+
+    Alternatively, you may use any terminal environment. But, `IBM Cloud Shell` environment provides all required CLI tools.
 
 1. Clone the ML repository.
 
     ```
+    cd ~
     git clone https://github.com/lee-zhg/intro-machine-learning.git
+    cd  intro-machine-learning
     ```
 
-1. ML REST API requests an access token for authentication. In order to get access token you need to have API Key that you can get from your IBM cloud account. To obtain a API key,
-
-    - Login to [IBM Cloud](https://cloud.ibm.com)(https://cloud.ibm.com).
-    - Open [`IBM Cloud Shell`](https://cloud.ibm.com/shell)(https://cloud.ibm.com/shell).
-    - Get an API key by running the command below.
+1. Watson Machine Learning REST API requests an access token for authentication. In order to get access token you need to have API Key that you can get from your IBM cloud account. To obtain a API key,
 
         ```
         ibmcloud iam api-key-create <key name>
         ```
 
-1. Open the Node.js application `app02.js` in a file editor. File `app02.js` can be found in the root folder of the downloaded repository. For exmaple,
+1. Open the Node.js application `app.js` in a file editor. File `app.js` can be found in the root folder of the downloaded repository.
 
     ```
-    cd  intro-machine-learning
-
-    vi app02.js
+    vi app.js
     ```
 
-1. Replace `apikey` and `mlInstanceId` at the top of the code.
+1. Replace `apikey` in the code with the one that you created in the previous step.
 
     ```
-    // Paste your Watson Machine Learning service apikey and Instance ID here
+    // Paste your apikey here
     const apikey = "ABC";
-    const mlInstanceId = "XYZ";
     ```
 
-1. Retrieve the `Scoring End-point` of your ML model.
+1. Retrieve the `Scoring Endpoint` of your ML model.
 
-    * Navigate to the home page of your project in Watson Studio.
-    * Click on the `Deployment` tab on the top of the project page and then click the name you used to create the deployment of your model.
-    * Navigate to the `Implementation` tab.
-    * Take a note of `Scoring End-point`.
+    The complete navigation path shows below.
+    * Navigate to the home page of your Watson Studio at https://dataplatform.cloud.ibm.com/home2?context=cpdaas.
+    * Select `Deployment spaces`.
+    * Select your deployment space.
+    * Navigate to the `Deployments` tab.
+    * Select your deployment.
 
-1. Replace `scoring_url` with `Scoring End-point` above at the top of the code.
+   ![](docs/images/sample_api02.png)
+
+1. Replace `scoring_url` in the `app.js` code with your `Scoring Endpoint`.
 
     ```
-    const scoring_url = "https://us-south.ml.cloud.ibm.com/v3/wml_instances/ce1c2b45-2918-465e-abcd-b23cec685b69/deployments/073e1b8a-0bf2-46ad-af04-e6aed292a46c/online";
+    const scoring_url = "https://us-south.ml.cloud.ibm.com/ml/v4/deployments/f71fc94e-244c-437b-8955-54b35bf254e5/predictions";
     ```
 
-1. Execute command below to install required Node,js libraries.
+1. Append `?version=2020-09-01` to the end of `scoring_url`. After modification, the `scoring_url` should look like
+
+    ```
+    const scoring_url = "https://us-south.ml.cloud.ibm.com/ml/v4/deployments/f71fc94e-244c-437b-8955-54b35bf254e5/predictions?version=2020-09-01";
+    ```
+
+1. Execute command below to install required Node.js libraries.
 
     ```
     npm install
@@ -188,51 +195,19 @@ You complete the steps in this section in a `IBM Cloud Shell` environment in IBM
 1. Execute command below to run the Node.js sample code which calls your model Rest API and make prediction.
 
     ```
-    node app02.js
+    node app.js
     ```
 
 1. You should receive a prediction.
 
     ```
-    Scoring response
-    { fields:
-        [ 'AVGHEARTBEATSPERMIN',
-         'PALPITATIONSPERDAY',
-         'CHOLESTEROL',
-         'BMI',
-         'AGE',
-         'SEX',
-         'FAMILYHISTORY',
-         'SMOKERLAST5YRS',
-         'EXERCISEMINPERWEEK',
-         'label',
-         'SEX_IX',
-         'FAMILYHISTORY_IX',
-         'SMOKERLAST5YRS_IX',
-         'features',
-         'rawPrediction',
-         'probability',
-         'prediction',
-         'predictedLabel' ],
-    values:
-        [ [ 93,
-            22,
-            163,
-            25,
-            49,
-            'F',
-            'N',
-            'N',
-            110,
-            0,
-            1,
-            0,
-            0,
-            [Array],
-            [Array],
-            [Array],
-            0,
-            'N' ] ] }
+    Scoring:
+    {
+        "predictions": [{
+            "fields": ["prediction", "probability"],
+            "values": [["N", [0.9160491065327744, 0.08395089346722558]]]
+        }]
+    }
     ```       
 
 
