@@ -127,24 +127,28 @@ Aside from testing the model within the notebook. You can test the model using t
 
 ## [Optional] Step 5: Test the Model Rest API via Node.js Sampe Code
 
-1. Retrieve the API key and Instance ID of the `Machine Learning` instance. You should have obtained the `apikey` and `instance_id` at the beginning of lab. In case you need them again, below are the instruction.
+You complete the steps in this section in a `IBM Cloud Shell` environment in IBM Cloud. 
 
-    * Navigate to IBM Cloud dashboard at https//cloud.ibm.com.
-    * Expand the `Services` section under the `Resource summary`.
-    * Select your `Machine Learning` instance.
-    * Select the `Service credentials` tab in the left pane.
-    * Click the `View credentials` of any `Key` entry. 
-    * Take notes of `apikey` and `instance_id`.
+1. Prepare a `IBM Cloud Shell` environment.
 
-        ![](docs/images/ss13.png)
+    - Login to [IBM Cloud](https://cloud.ibm.com)(https://cloud.ibm.com).
+    - Open [`IBM Cloud Shell`](https://cloud.ibm.com/shell)(https://cloud.ibm.com/shell).
 
-1. In a browser, login to web terminal with provided URL and credentials.
-
-1. clone the ML repository.
+1. Clone the ML repository.
 
     ```
     git clone https://github.com/lee-zhg/intro-machine-learning.git
     ```
+
+1. ML REST API requests an access token for authentication. In order to get access token you need to have API Key that you can get from your IBM cloud account. To obtain a API key,
+
+    - Login to [IBM Cloud](https://cloud.ibm.com)(https://cloud.ibm.com).
+    - Open [`IBM Cloud Shell`](https://cloud.ibm.com/shell)(https://cloud.ibm.com/shell).
+    - Get an API key by running the command below.
+
+        ```
+        ibmcloud iam api-key-create <key name>
+        ```
 
 1. Open the Node.js application `app02.js` in a file editor. File `app02.js` can be found in the root folder of the downloaded repository. For exmaple,
 

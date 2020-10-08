@@ -183,7 +183,7 @@ Alternatively, you can also test the model REST API via external applications. W
     * Navigate to the `Deployments` tab.
     * Select your deployment.
 
-1. Copy and paste the last command to a pure text editor. THis is a sample CURL command for accessing your deployed model. For example,
+1. Copy and paste the last command to a pure text editor. This is a sample CURL command for accessing your deployed model. For example,
 
     ```
     curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header "Authorization: Bearer  $IAM_AUTH_TOKEN" -d '{"fields": [$ARRAY_OF_INPUT_FIELDS],"values": [$ARRAY_OF_VALUES_TO_BE_SCORED, $ANOTHER_ARRAY_OF_VALUES_TO_BE_SCORED]}' https://us-south.ml.cloud.ibm.com/ml/v4/deployments/f71fc94e-244c-437b-8955-54b35bf254e5/predictions
