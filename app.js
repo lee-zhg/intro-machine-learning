@@ -20,13 +20,12 @@ const wml_credentials = new Map();
 var request = require( 'sync-request' );
 
 // Paste your Watson Machine Learning service apikey here
-const apikey = "QiGk9o_bHFo_TrCnR_lGuLEdw2Pd2gLFPNeQzMvJiDgX";
-const mlInstanceId = "ce1c2b45-2918-465e-abcd-b23cec685b69";
-const scoring_url = "https://us-south.ml.cloud.ibm.com/v3/wml_instances/ce1c2b45-2918-465e-abcd-b23cec685b69/deployments/073e1b8a-0bf2-46ad-af04-e6aed292a46c/online";
+const apikey = "zcV7hl4LSL6C7eMXRFF0SxbvyuaXh64NcuYtAW-GfdhP";
+const scoring_url = "https://us-south.ml.cloud.ibm.com/ml/v4/deployments/f71fc94e-244c-437b-8955-54b35bf254e5/predictions?version=2020-09-01";
 
 // generate IAM token based on APIkey of Watson Machine Learning service
-var IBM_Cloud_IAM_uid = "bx";
-var IBM_Cloud_IAM_pwd = "bx";
+const IBM_Cloud_IAM_uid = "bx";
+const IBM_Cloud_IAM_pwd = "bx";
 
 
 // get ML token 
@@ -65,14 +64,14 @@ var getMLToken = async (iam_token, loadCallback) => {
 }
 
 // call model API
-var apiPost = async (scoring_url, token, mlInstanceID, payload, loadCallback, errorCallback) => {
+var apiPost = async (scoring_url, token, payload, loadCallback, errorCallback) => {
 	const oReq = new XMLHttpRequest();
 	oReq.addEventListener("load", loadCallback);
 	oReq.addEventListener("error", errorCallback);
 	oReq.open("POST", scoring_url);
 	oReq.setRequestHeader("Accept", "application/json");
 	oReq.setRequestHeader("Authorization", token);
-	oReq.setRequestHeader("ML-Instance-ID", mlInstanceID);
+	//oReq.setRequestHeader("ML-Instance-ID", mlInstanceID);
 	oReq.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 	oReq.send(payload);
 
@@ -91,20 +90,17 @@ var apiPost = async (scoring_url, token, mlInstanceID, payload, loadCallback, er
 		} catch (ex) {
 			// TODO: handle parsing exception
 		}
-
-		console.log("Token:");
-		console.log(iam_token);
 	});
 
-	//console.log("ML TOKEN");
-	//console.log(iam_token);
 
 	const wmlToken = "Bearer " + iam_token;
+	//console.log("ML TOKEN");
+	//console.log(wmlToken);
 
 	// NOTE: manually define and pass the array(s) of values to be scored in the next line
-	const payload = '{"fields": ["AVGHEARTBEATSPERMIN", "PALPITATIONSPERDAY", "CHOLESTEROL", "BMI", "AGE", "SEX", "FAMILYHISTORY", "SMOKERLAST5YRS", "EXERCISEMINPERWEEK"], "values": [[93, 22, 163, 25, 49, "F", "N", "N", 110]]}';
+	const payload = '{"input_data": [{"fields": ["AVGHEARTBEATSPERMIN", "PALPITATIONSPERDAY", "CHOLESTEROL", "BMI", "AGE", "SEX", "FAMILYHISTORY", "SMOKERLAST5YRS", "EXERCISEMINPERWEEK"],"values": [[93, 22, 163, 25, 49, "F", "N", "N", 110]]}]}'
 
-	await apiPost(scoring_url, wmlToken, mlInstanceId, payload, function (resp) {
+	await apiPost(scoring_url, wmlToken, payload, function (resp) {
 		let parsedPostResponse;
 		try {
 			parsedPostResponse = JSON.parse(this.responseText);
@@ -112,8 +108,9 @@ var apiPost = async (scoring_url, token, mlInstanceID, payload, loadCallback, er
 			// TODO: handle parsing exception
 		}
 
-		console.log("Scoring response");
-		console.log(parsedPostResponse);
+		console.log("Scoring:");
+		//console.log(parsedPostResponse.predictions);
+		console.log(this.responseText);
 	}, function (error) {
 		console.log(error);
 	});
